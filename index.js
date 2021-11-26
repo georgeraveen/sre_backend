@@ -2,11 +2,14 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+// parse requests of content-type - application/json
+app.use(express.json());
+
 var mysql = require('mysql');
 var connection = mysql.createConnection({
-    host: '35.184.135.254',
+    host: 'localhost',
     user: 'root',
-    password: 'Proktara@123',
+    password: '',
     database: 'sre_mail'
 });
 
@@ -26,7 +29,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/incoming_mails', (req, res) => {
-    console.log(req)
+    console.log(req.body)
     res.status(200).send({
         message: "Success"
     });
