@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/Suvink/sre_backend#readme",
   "dependencies": {
+    "dateformat": "^5.0.2",
     "express": "^4.17.1",
+    "moment": "^2.29.1",
     "mysql": "^2.18.1"
   }
 }
