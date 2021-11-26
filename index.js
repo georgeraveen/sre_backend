@@ -19,16 +19,17 @@ connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
 
 // connection.end();
 
-
-
-
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.status(200).send({
+        message: "Hello World"
+    });
 })
 
 app.post('/incoming_mails', (req, res) => {
-
-    res.send('incoming_mails')
+    console.log(req)
+    res.status(200).send({
+        message: "Success"
+    });
 })
 
 app.listen(port, () => {
